@@ -1,0 +1,37 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+   @{ 
+	   var album = ViewData["Album"] as SistemaFooFaMvc.Models.Album;
+   }
+
+    <h2>@ViewData["Header"]</h2>
+
+    <table style="font-family: Arial, Helvetica, sans-serif">
+        <tr>
+            <td>Album ID:</td>
+            <td>@album.Id</td>
+        </tr>
+        <tr>
+            <td>Titulo:</td>
+            <td>@album.Titulo</td>
+        </tr>
+        <tr>
+            <td>Lançamento:</td>
+            <td>@album.Lancamento</td>
+        </tr>
+
+    </table>
+
+</body>
+</html>
