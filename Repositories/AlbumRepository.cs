@@ -11,16 +11,9 @@ namespace SistemaFooFaMvc.Repositories
     public class AlbumRepository
     {
 
-       // private SqlConnection conexao;
-
-        private string GetConnectionString()
-        {
-            return ConfigurationManager.ConnectionStrings["FooFighters"].ConnectionString;
-        }
-
         public bool AddAlbum(AlbumModel album)
         {
-            using (SqlConnection conexao = new SqlConnection(GetConnectionString()))
+            using (SqlConnection conexao = new SqlConnection(Conexao.GetConnectionString()))
             {
                 string sql = @"INSERT INTO Album" +
                     "(Titulo, Lancamento)" +
@@ -33,9 +26,9 @@ namespace SistemaFooFaMvc.Repositories
                     sqlCmd.Parameters.AddWithValue("@Lancamento", album.Lancamento);
 
                     conexao.Open();
-                    int i = sqlCmd.ExecuteNonQuery();
+                    int linhaDaTabela = sqlCmd.ExecuteNonQuery();
 
-                    if (i >= 1)
+                    if (linhaDaTabela >= 1)
                     {
                         return true;
                     }

@@ -101,8 +101,11 @@
     <Compile Include="Models\Album.cs" />
     <Compile Include="Models\AlbumBusinessLayer.cs" />
     <Compile Include="Models\AlbumModel.cs" />
+    <Compile Include="Models\MusicaModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\AlbumRepository.cs" />
+    <Compile Include="Repositories\Conexao.cs" />
+    <Compile Include="Repositories\MusicaRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />

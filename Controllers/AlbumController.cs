@@ -2,6 +2,7 @@
 using SistemaFooFaMvc.Repositories;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -29,7 +30,7 @@ namespace SistemaFooFaMvc.Controllers
 
                 return View();
             }
-            catch (Exception)
+            catch (SqlException ex)
             {
 
                 return View();
