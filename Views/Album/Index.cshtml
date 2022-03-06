@@ -5,35 +5,27 @@
 	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<p>
-	@Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-	<tr>
-		<th>
-			@Html.DisplayNameFor(model => model.Titulo)
-		</th>
-		<th>
-			@Html.DisplayNameFor(model => model.Lancamento)
-		</th>
-		<th></th>
-	</tr>
-
+<main>
 	@foreach (var item in Model)
 	{
-		<tr>
-			<td>
-				@Html.DisplayFor(modelItem => item.Titulo)
-			</td>
-			<td>
-				@Html.DisplayFor(modelItem => item.Lancamento)
-			</td>
-			<td>
-				@Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-				@Html.ActionLink("Details", "Details", new { id = item.Id }) |
-				@Html.ActionLink("Delete", "Delete", new { id = item.Id })
-			</td>
-		</tr>
+		<section class="container">
+			<div class="content">
+				<div class="card">
+					<img
+						 src="@Html.DisplayFor(modelItem => item.Imagem)"
+						 alt="Capa do album @Html.DisplayFor(modelItem => item.Titulo)" 
+					/>
+					<span>@Html.DisplayFor(modelItem => item.Descricao)</span>
+				</div>
+				<div class="card-container">
+					<h4>@Html.DisplayFor(modelItem => item.Titulo)</h4>
+					<p>@Html.DisplayFor(modelItem => item.Lancamento)</p>
+				</div>
+			</div>
+		</section>
 	}
+</main>
 
-</table>
+
+
+

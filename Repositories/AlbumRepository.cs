@@ -62,7 +62,9 @@ namespace SistemaFooFaMvc.Repositories
                             {
                                 Id = Convert.ToInt32(linha["Id"]),
                                 Titulo = Convert.ToString(linha["Titulo"]),
-                                Lancamento = Convert.ToInt32(linha["Lancamento"])
+                                Lancamento = Convert.ToInt32(linha["Lancamento"]),
+                                Imagem = Convert.ToString(linha["Imagem"]),
+                                Descricao = Convert.ToString(linha["Descricao"])
                             }
                             );
                     }
