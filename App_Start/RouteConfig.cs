@@ -14,9 +14,9 @@ namespace SistemaFooFaMvc
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                name: "Album",
+                url: "albuns/index",
+                defaults: new { controller = "Album", action = "Index" }
             );
         }
     }
