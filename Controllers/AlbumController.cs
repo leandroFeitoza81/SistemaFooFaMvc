@@ -36,5 +36,12 @@ namespace SistemaFooFaMvc.Controllers
                 return View();
             }
         }
+
+        public ActionResult ListaAlbuns()
+        {
+            AlbumRepository albumRepo = new AlbumRepository();
+            ModelState.Clear();
+            return View(albumRepo.GetAllAlbuns());
+        }
     }
 }

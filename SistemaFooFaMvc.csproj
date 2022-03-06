@@ -114,6 +114,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Album\Create.cshtml" />
     <Content Include="Views\Musica\Create.cshtml" />
+    <Content Include="Views\Album\ListaAlbuns.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

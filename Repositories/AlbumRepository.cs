@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -35,6 +36,39 @@ namespace SistemaFooFaMvc.Repositories
                 }
 
                 return false;
+            }
+        }
+
+        public List<AlbumModel> GetAllAlbuns()
+        {
+            using(SqlConnection conexao = new SqlConnection(Conexao.GetConnectionString()))
+            {
+                List<AlbumModel> albumList = new List<AlbumModel>();
+
+                string sql = @"SELECT * FROM Album";
+
+                using (SqlCommand sqlCmd = new SqlCommand(sql, conexao))
+                {
+                    SqlDataAdapter da = new SqlDataAdapter(sqlCmd);
+                    DataTable dt = new DataTable();
+                    
+                    conexao.Open();
+                    da.Fill(dt);
+
+                    foreach (DataRow linha in dt.Rows)
+                    {
+                        albumList.Add(
+                            new AlbumModel
+                            {
+                                Id = Convert.ToInt32(linha["Id"]),
+                                Titulo = Convert.ToString(linha["Titulo"]),
+                                Lancamento = Convert.ToInt32(linha["Lancamento"])
+                            }
+                            );
+                    }
+
+                    return albumList;
+                }
             }
         }
     }
