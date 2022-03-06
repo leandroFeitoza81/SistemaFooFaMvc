@@ -10,15 +10,8 @@ namespace SistemaFooFaMvc.Controllers
     public class HomeController : Controller
     {
         // GET: Home
-        public ActionResult Index(int id)
+        public ActionResult Index()
         {
-
-            AlbumBusinessLayer albumBL = new AlbumBusinessLayer();
-            Album album = albumBL.GetAlbumDetails(id);
-
-            //ViewData["Album"] = album;
-            ViewData["Header"] = "Album Details";
-
             return View();
         }
     }

@@ -14,7 +14,9 @@ namespace SistemaFooFaMvc.Controllers
         // GET: Album
         public ActionResult Index()
         {
-            return View();
+            AlbumRepository albumRepo = new AlbumRepository();
+            ModelState.Clear();
+            return View(albumRepo.GetAllAlbuns());
         }
 
         public ActionResult Create(AlbumModel album)
@@ -37,11 +39,6 @@ namespace SistemaFooFaMvc.Controllers
             }
         }
 
-        public ActionResult ListaAlbuns()
-        {
-            AlbumRepository albumRepo = new AlbumRepository();
-            ModelState.Clear();
-            return View(albumRepo.GetAllAlbuns());
-        }
+      
     }
 }
